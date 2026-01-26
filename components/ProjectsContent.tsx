@@ -37,7 +37,9 @@ export default function ProjectsContent() {
               key={t}
               onClick={() => setTag(t)}
               className={`rounded-full border px-4 py-2 text-xs font-medium transition ${
-                tag === t ? 'border-slate-900 bg-slate-900 text-white' : 'border-slate-200 bg-white text-slate-700 hover:bg-slate-100'
+                tag === t
+                  ? 'border-cyan-400/60 bg-cyan-400 text-slate-950'
+                  : 'border-slate-700/70 bg-slate-900/80 text-slate-300 hover:border-cyan-400/60 hover:text-white'
               }`}
               aria-pressed={tag === t}
             >

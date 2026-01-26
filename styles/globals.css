@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 :root {
-  color-scheme: light;
+  color-scheme: dark;
 }
 
 html {
@@ -11,9 +11,13 @@ html {
 }
 
 body {
-  @apply bg-white text-slate-900 antialiased;
+  @apply bg-black text-slate-100 antialiased;
+  background:
+    radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 45%),
+    radial-gradient(circle at 20% 20%, rgba(99, 102, 241, 0.1), transparent 35%),
+    #000000;
 }
 
 ::selection {
-  @apply bg-slate-900 text-white;
+  @apply bg-cyan-400 text-slate-950;
 }
