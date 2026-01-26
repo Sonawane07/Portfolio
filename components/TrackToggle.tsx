@@ -44,13 +44,13 @@ export default function TrackToggle({ className = '' }: { className?: string }) 
   }
 
   return (
-    <div className={`inline-flex items-center rounded-full border border-slate-200 bg-white p-1 text-xs ${className}`}>
+    <div className={`inline-flex items-center rounded-full border border-slate-700/70 bg-slate-900/80 p-1 text-xs ${className}`}>
       {(['aiml', 'sde'] as Track[]).map((t) => (
         <button
           key={t}
           onClick={() => set(t)}
           className={`rounded-full px-3 py-1.5 font-medium transition ${
-            track === t ? 'bg-slate-900 text-white' : 'text-slate-700 hover:bg-slate-100'
+            track === t ? 'bg-cyan-400 text-slate-950' : 'text-slate-300 hover:bg-slate-800'
           }`}
           aria-pressed={track === t}
         >

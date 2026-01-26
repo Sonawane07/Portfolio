@@ -13,18 +13,18 @@ export const SITE = {
 export const TRACKS: Record<Track, { label: string; headline: string; summary: string; primarySkills: string[]; resumePath: string }> = {
   sde: {
     label: 'SDE',
-    headline: 'Software Engineer (Backend / Full‑Stack)',
+    headline: 'Software Engineer (Full‑Stack & Mobile)',
     summary:
-      'I build reliable backend systems and full‑stack applications with clean APIs, strong data models, and production deployment in mind.',
-    primarySkills: ['Python', 'TypeScript', 'Django', 'React Native', 'REST APIs', 'PostgreSQL', 'AWS', 'Docker'],
+      'I build full‑stack and mobile products with clean APIs, strong data models, and production‑ready cloud deployments.',
+    primarySkills: ['Python', 'TypeScript', 'React Native', 'Django', 'REST APIs', 'AWS', 'MySQL', 'Docker'],
     resumePath: '/resume-sde.pdf',
   },
   aiml: {
     label: 'AI/ML',
     headline: 'AI/ML Engineer (Applied ML + GenAI)',
     summary:
-      'I build practical AI systems—from diffusion and LLM pipelines to scalable inference—with measurable results and clear tradeoffs.',
-    primarySkills: ['Python', 'PyTorch', 'Diffusion Models', 'LLMs', 'RAG', 'Vector Search', 'FastAPI', 'AWS/OCI'],
+      'I build practical AI systems—from diffusion and RAG pipelines to scalable inference—with measurable results and clear tradeoffs.',
+    primarySkills: ['Python', 'PyTorch', 'TensorFlow', 'RAG', 'Diffusion Models', 'Vector Search', 'SHAP', 'FastAPI'],
     resumePath: '/resume-aiml.pdf',
   },
 };
@@ -35,19 +35,45 @@ export type Experience = {
   location?: string;
   timeframe: string;
   highlights: string[];
+  tracks: Track[];
 };
 
 export const EXPERIENCE: Experience[] = [
   {
+    company: 'University at Buffalo',
+    role: 'Research Assistant, 3D Human‑Object Interaction',
+    location: 'Buffalo, NY',
+    timeframe: 'Jan 2026 – Present',
+    highlights: [
+      'Deconstructed 3D human‑object interaction into 3+ reusable primitives mapped to SMPL‑based human meshes with 10^4+ vertices.',
+      'Assessed diffusion‑based HOI reconstruction and contact‑aware optimization using short monocular videos (10–30 frames).',
+      'Unified three ICCV 2025 HOI methods into a single PyTorch pipeline with standardized mesh and point‑cloud processing.',
+    ],
+    tracks: ['sde', 'aiml'],
+  },
+  {
     company: 'Qu Social',
-    role: 'React Native Developer Intern',
+    role: 'Full Stack Developer Intern',
     location: 'Buffalo, NY',
     timeframe: 'Jan 2025 – May 2025',
     highlights: [
-      'Built a React Native app enabling 1K+ users for live topic‑based video chats (AWS + MySQL).',
-      'Developed frontend + backend services in TypeScript + Python with REST APIs; reached 85% unit test coverage (Jest/Pytest).',
-      'Reduced runtime bugs by 30% via unit tests across auth, video, and data API modules; demoed at CSE Demo Day (2nd of 95).',
+      'Delivered a React Native app enabling 1K+ users’ live topic‑based video chats in a cross‑functional team of 5.',
+      'Operationalized frontend and backend using React Native, TypeScript, AWS, and MySQL with ConnectyCube API; achieved 85% unit test coverage.',
+      'Reduced runtime bugs by 30% via unit tests across authentication, video, and data APIs through collaborative debugging.',
     ],
+    tracks: ['sde', 'aiml'],
+  },
+  {
+    company: 'e-stone',
+    role: 'Full Stack Developer Intern',
+    location: 'Mumbai, India',
+    timeframe: 'Jun 2022 – May 2023',
+    highlights: [
+      'Programmed a cross‑platform Flutter app for retailer‑wholesaler order management across two user roles.',
+      'Implemented real‑time Firebase data handling to synchronize orders and updates, improving operational efficiency by 25%.',
+      'Built auth, cart, and password recovery features across three core modules; published a technical paper in Equinox.',
+    ],
+    tracks: ['sde'],
   },
   {
     company: 'Trivia Software',
@@ -55,10 +81,11 @@ export const EXPERIENCE: Experience[] = [
     location: 'Mumbai, India',
     timeframe: 'Dec 2020 – Mar 2021',
     highlights: [
-      'Built a Python app with SQL backend, validation, and logging; improved retrieval time by 15%.',
-      'Added Matplotlib visualizations to improve academic performance analysis efficiency by 50%.',
-      'Resolved pipeline bottlenecks, improving data reliability by 20%.',
+      'Built a Python application with a SQL backend, reducing retrieval time by 15% through Agile iteration.',
+      'Integrated Matplotlib to visualize academic trends, improving analysis efficiency by 50% through collaborative validation.',
+      'Resolved performance bottlenecks, improving data reliability by 20% via iterative code reviews.',
     ],
+    tracks: ['sde', 'aiml'],
   },
 ];
 
@@ -78,14 +105,14 @@ export const PROJECTS: Project[] = [
   {
     id: 'autorag',
     title: 'AutoRAG Studio — RAG-as-a-Service Platform',
-    timeframe: 'Dec 2025 – Present',
-    subtitle: 'Multi‑tenant agent workflows with embeddings + vector search + scalable inference.',
+    timeframe: '2025 – Present',
+    subtitle: 'Multi‑tenant RAG platform with isolated agent workflows and vector search.',
     bullets: [
-      'Designing multi‑tenant AI services for LLM‑powered agent workflows.',
-      'Building pipelines for embeddings, vector search, and inference for scalable orchestration.',
-      'FastAPI backend + React dashboard integrated with OCI Generative AI.',
+      'Architected a multi‑tenant RAG platform supporting 10+ isolated AI agents with dedicated vector indexes, API keys, and knowledge bases.',
+      'Implemented end‑to‑end RAG pipelines with embeddings, vector similarity search, and LLM inference across three core stages.',
+      'Built a FastAPI orchestration layer and React dashboard to manage 5+ agent lifecycle operations (ingestion, querying, automation).',
     ],
-    tech: ['Python', 'FastAPI', 'React', 'Vector DB', 'Embeddings', 'LLMs', 'OCI Generative AI'],
+    tech: ['Python', 'FastAPI', 'React', 'Vector DB', 'Embeddings', 'LLMs'],
     tracks: ['aiml'],
     tags: ['GenAI', 'RAG', 'Backend'],
   },
@@ -93,11 +120,11 @@ export const PROJECTS: Project[] = [
     id: 'text2image',
     title: 'Text‑to‑Image Generation (Stable Diffusion + LoRA)',
     timeframe: 'Jan 2025 – May 2025',
-    subtitle: 'Fine‑tuned Stable Diffusion v1.5 on CelebA; faster training and real‑time inference goals.',
+    subtitle: 'Fine‑tuned Stable Diffusion v1.5 on CelebA with LoRA for faster training.',
     bullets: [
-      'Fine‑tuned Stable Diffusion v1.5 using LoRA on CelebA; reduced trainable params 22× and compute cost 75%.',
-      'Built attribute‑conditioned synthesis pipeline with PyTorch DDP across 4 GPUs for 110k‑step training.',
-      'Benchmarked vs BART/T5 baselines and analyzed outputs with MSE; targeted photorealistic face generation at 512×512.',
+      'Designed a text‑conditioned diffusion model and fine‑tuned Stable Diffusion v1.5 with LoRA, cutting trainable params 22× and compute cost 75%.',
+      'Built an attribute‑conditioned synthesis pipeline achieving 85% accuracy with 4× faster convergence using PyTorch DDP across four GPUs.',
+      'Benchmarked against BART/T5 baselines and analyzed model behavior via MSE (0.047 vs 0.165) for real‑time 512×512 generation.',
     ],
     tech: ['PyTorch', 'Diffusion Models', 'LoRA', 'DDP', 'CUDA', 'Transformers'],
     tracks: ['aiml'],
@@ -120,30 +147,16 @@ export const PROJECTS: Project[] = [
   {
     id: 'ecommerce',
     title: 'E‑commerce Web App (Django + AWS)',
-    timeframe: 'Nov 2025 – Jan 2026',
+    timeframe: '2025',
     subtitle: 'Full‑stack Django app with PayPal payments, auth flows, and AWS deployment.',
     bullets: [
-      'Built Django app with 30+ REST endpoints, session‑safe cart handling, and idempotent order processing.',
-      'Integrated PayPal payments with full validation plus email verification and password reset flows; improved checkout conversion.',
-      'Deployed on AWS (S3, RDS, Elastic Beanstalk) for production‑ready scalability.',
+      'Architected a full‑stack Django app with 30+ REST endpoints and coordinated end‑to‑end feature delivery.',
+      'Integrated PayPal payments with 100% transaction validation, email verification, password reset, and session‑based cart persistence.',
+      'Provisioned AWS infrastructure on S3, RDS, and Elastic Beanstalk for 99.9% uptime and production readiness.',
     ],
     tech: ['Django', 'Python', 'PostgreSQL', 'AWS S3', 'AWS RDS', 'Elastic Beanstalk', 'PayPal'],
     tracks: ['sde'],
     tags: ['Full‑Stack', 'Backend', 'Cloud'],
-  },
-  {
-    id: 'sales-module',
-    title: 'Sales Module App for Retailers (Flutter)',
-    timeframe: 'Jun 2022 – May 2023',
-    subtitle: 'Cross‑platform mobile app for retailer‑wholesaler order workflows.',
-    bullets: [
-      'Built cross‑platform Flutter app for order management between retailers and wholesalers.',
-      'Implemented real‑time Firebase data handling to improve efficiency.',
-      'Shipped auth, cart, and password recovery; published a technical paper (Equinox 2023).',
-    ],
-    tech: ['Flutter', 'Dart', 'Firebase'],
-    tracks: ['sde'],
-    tags: ['Mobile', 'Full‑Stack'],
   },
 ];
 

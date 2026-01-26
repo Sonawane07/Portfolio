@@ -14,14 +14,14 @@ const NAV = [
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-200 bg-white/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur">
       <Container>
         <div className="flex items-center justify-between gap-4 py-3">
           <div className="min-w-0">
-            <Link href="/" className="truncate text-sm font-semibold tracking-tight text-slate-900">
+            <Link href="/" className="truncate text-sm font-semibold tracking-tight text-slate-100">
               {SITE.name}
             </Link>
-            <div className="text-xs text-slate-600">{SITE.location}</div>
+            <div className="text-xs text-slate-400">{SITE.location}</div>
           </div>
 
           <nav className="hidden items-center gap-1 md:flex" aria-label="Primary">
@@ -29,7 +29,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-100 hover:text-slate-900"
+                className="rounded-full px-3 py-2 text-sm text-slate-300 transition hover:bg-slate-900 hover:text-white"
               >
                 {item.label}
               </Link>
@@ -42,7 +42,7 @@ export default function Navbar() {
               href={SITE.github}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-slate-200 bg-white px-3 py-2 text-sm text-slate-700 transition hover:bg-slate-100"
+              className="rounded-full border border-slate-700/70 bg-slate-900/80 px-3 py-2 text-sm text-slate-200 transition hover:border-cyan-400/60 hover:text-white"
             >
               GitHub
             </a>
@@ -54,7 +54,7 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full border border-slate-200 bg-white px-3 py-2 text-xs text-slate-700 transition hover:bg-slate-100"
+              className="rounded-full border border-slate-700/70 bg-slate-900/80 px-3 py-2 text-xs text-slate-300 transition hover:border-cyan-400/60 hover:text-white"
             >
               {item.label}
             </Link>
