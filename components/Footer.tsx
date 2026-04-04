@@ -10,13 +10,13 @@ export default function Footer() {
             © {new Date().getFullYear()} {SITE.name} · {SITE.repoNote}
           </div>
           <div className="flex gap-4">
-            <a className="hover:text-white" href={SITE.linkedin} target="_blank" rel="noreferrer">
+            <a className="transition hover:text-amber-300" href={SITE.linkedin} target="_blank" rel="noreferrer">
               LinkedIn
             </a>
-            <a className="hover:text-white" href={SITE.github} target="_blank" rel="noreferrer">
+            <a className="transition hover:text-amber-300" href={SITE.github} target="_blank" rel="noreferrer">
               GitHub
             </a>
-            <a className="hover:text-white" href={`mailto:${SITE.email}`}>
+            <a className="transition hover:text-amber-300" href={`mailto:${SITE.email}`}>
               Email
             </a>
           </div>

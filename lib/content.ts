@@ -1,33 +1,37 @@
-export type Track = 'sde' | 'aiml';
-
 export const SITE = {
-  name: 'Darshan Sonawane',
+  name: 'Darshan Sunil Sonawane',
+  shortName: 'Darshan',
   email: 'darshansonawane2012@gmail.com',
-  phone: '+1-716-709-1497',
   github: 'https://github.com/Sonawane07',
   linkedin: 'https://linkedin.com/in/darshan2012/',
-  location: 'Buffalo, NY',
-  repoNote: 'Built with Next.js + TypeScript + Tailwind',
+  location: 'Buffalo, NY, USA',
+  repoNote: 'Next.js · TypeScript · Tailwind',
 };
 
-export const TRACKS: Record<Track, { label: string; headline: string; summary: string; primarySkills: string[]; resumePath: string }> = {
-  sde: {
-    label: 'SDE',
-    headline: 'Software Engineer (Full‑Stack & Mobile)',
-    summary:
-      'I build full‑stack and mobile products with clean APIs, strong data models, and production‑ready cloud deployments.',
-    primarySkills: ['Python', 'TypeScript', 'React Native', 'Django', 'REST APIs', 'AWS', 'MySQL', 'Docker'],
-    resumePath: '/resume-sde.pdf',
-  },
-  aiml: {
-    label: 'AI/ML',
-    headline: 'AI/ML Engineer (Applied ML + GenAI)',
-    summary:
-      'I build practical AI systems—from diffusion and RAG pipelines to scalable inference—with measurable results and clear tradeoffs.',
-    primarySkills: ['Python', 'PyTorch', 'TensorFlow', 'RAG', 'Diffusion Models', 'Vector Search', 'SHAP', 'FastAPI'],
-    resumePath: '/resume-aiml.pdf',
-  },
+/** Unified hero — AI/ML + software engineering in one narrative */
+export const HERO = {
+  headline: 'AI / ML & Software Engineer',
+  summary:
+    'I build research-grade ML systems—RAG platforms, diffusion models, and 3D human–object interaction—and ship production full-stack and mobile products with solid APIs, tests, and cloud deployment.',
+  skillChips: [
+    'Python',
+    'PyTorch',
+    'TypeScript',
+    'React Native',
+    'RAG',
+    'FastAPI',
+    'Django',
+    'AWS',
+    'Docker',
+    'REST APIs',
+    'Vector search',
+  ],
 };
+
+export const RESUMES = [
+  { label: 'AI / ML resume (PDF)', path: '/resume-aiml.pdf' },
+  { label: 'Software engineering resume (PDF)', path: '/resume-sde.pdf' },
+] as const;
 
 export type Experience = {
   company: string;
@@ -35,7 +39,6 @@ export type Experience = {
   location?: string;
   timeframe: string;
   highlights: string[];
-  tracks: Track[];
 };
 
 export const EXPERIENCE: Experience[] = [
@@ -49,7 +52,6 @@ export const EXPERIENCE: Experience[] = [
       'Assessed diffusion‑based HOI reconstruction and contact‑aware optimization using short monocular videos (10–30 frames).',
       'Unified three ICCV 2025 HOI methods into a single PyTorch pipeline with standardized mesh and point‑cloud processing.',
     ],
-    tracks: ['sde', 'aiml'],
   },
   {
     company: 'Qu Social',
@@ -61,7 +63,6 @@ export const EXPERIENCE: Experience[] = [
       'Operationalized frontend and backend using React Native, TypeScript, AWS, and MySQL with ConnectyCube API; achieved 85% unit test coverage.',
       'Reduced runtime bugs by 30% via unit tests across authentication, video, and data APIs through collaborative debugging.',
     ],
-    tracks: ['sde', 'aiml'],
   },
   {
     company: 'e-stone',
@@ -73,7 +74,6 @@ export const EXPERIENCE: Experience[] = [
       'Implemented real‑time Firebase data handling to synchronize orders and updates, improving operational efficiency by 25%.',
       'Built auth, cart, and password recovery features across three core modules; published a technical paper in Equinox.',
     ],
-    tracks: ['sde'],
   },
   {
     company: 'Trivia Software',
@@ -85,7 +85,6 @@ export const EXPERIENCE: Experience[] = [
       'Integrated Matplotlib to visualize academic trends, improving analysis efficiency by 50% through collaborative validation.',
       'Resolved performance bottlenecks, improving data reliability by 20% via iterative code reviews.',
     ],
-    tracks: ['sde', 'aiml'],
   },
 ];
 
@@ -97,7 +96,6 @@ export type Project = {
   bullets: string[];
   tech: string[];
   links?: { label: string; href: string }[];
-  tracks: Track[]; // which tracks to show this under
   tags: string[];
 };
 
@@ -113,7 +111,6 @@ export const PROJECTS: Project[] = [
       'Built a FastAPI orchestration layer and React dashboard to manage 5+ agent lifecycle operations (ingestion, querying, automation).',
     ],
     tech: ['Python', 'FastAPI', 'React', 'Vector DB', 'Embeddings', 'LLMs'],
-    tracks: ['aiml'],
     tags: ['GenAI', 'RAG', 'Backend'],
   },
   {
@@ -124,25 +121,36 @@ export const PROJECTS: Project[] = [
     bullets: [
       'Designed a text‑conditioned diffusion model and fine‑tuned Stable Diffusion v1.5 with LoRA, cutting trainable params 22× and compute cost 75%.',
       'Built an attribute‑conditioned synthesis pipeline achieving 85% accuracy with 4× faster convergence using PyTorch DDP across four GPUs.',
-      'Benchmarked against BART/T5 baselines and analyzed model behavior via MSE (0.047 vs 0.165) for real‑time 512×512 generation.',
+      'Benchmarked against BART/T5 baselines and analyzed model behavior via MSE (0.047 vs. 0.165) for real‑time 512×512 generation.',
     ],
     tech: ['PyTorch', 'Diffusion Models', 'LoRA', 'DDP', 'CUDA', 'Transformers'],
-    tracks: ['aiml'],
     tags: ['Generative AI', 'Diffusion', 'Training'],
   },
   {
     id: 'crop-yield',
     title: 'Crop Yield Prediction (ML + Explainability)',
     timeframe: 'Sep 2024 – Nov 2024',
-    subtitle: 'Random Forest model + SHAP explainability with batch and real‑time prediction interface.',
+    subtitle: 'Random Forest with engineered features; Flask + batch/real-time pipelines.',
     bullets: [
-      'Built Random Forest model achieving 89% accuracy to predict crop yield (tons/hectare).',
-      'Created Flask interface and data pipeline for batch + real‑time processing.',
-      'Used SHAP for explainability and presented results for food security insights.',
+      'Developed a Random Forest model achieving 89% accuracy using 15+ engineered features in a 2-person Agile team.',
+      'Coordinated a Flask interface plus data pipelines for batch and real-time processing, including Spark/Hadoop for distributed workloads where required.',
+      'Presented results across review cycles for food security and agricultural insight stakeholders.',
     ],
-    tech: ['Python', 'scikit-learn', 'SHAP', 'Flask', 'Pandas'],
-    tracks: ['aiml', 'sde'],
+    tech: ['Python', 'scikit-learn', 'SHAP', 'Flask', 'Pandas', 'Spark', 'Hadoop'],
     tags: ['ML', 'Backend', 'Data'],
+  },
+  {
+    id: 'pintos',
+    title: 'Pintos Operating System',
+    timeframe: '2024',
+    subtitle: 'Kernel-level scheduling, synchronization, and system calls in C.',
+    bullets: [
+      'Engineered kernel-level thread scheduling, synchronization primitives, and system call interfaces across four Pintos modules.',
+      'Extended process management and memory handling, improving stability under concurrent workloads by roughly 30%.',
+      'Debugged low-level C kernel logic with GDB and validated behavior through 50+ targeted test scenarios.',
+    ],
+    tech: ['C', 'GDB', 'Kernel', 'Concurrency', 'OS'],
+    tags: ['Systems', 'Low-level'],
   },
   {
     id: 'ecommerce',
@@ -155,7 +163,6 @@ export const PROJECTS: Project[] = [
       'Provisioned AWS infrastructure on S3, RDS, and Elastic Beanstalk for 99.9% uptime and production readiness.',
     ],
     tech: ['Django', 'Python', 'PostgreSQL', 'AWS S3', 'AWS RDS', 'Elastic Beanstalk', 'PayPal'],
-    tracks: ['sde'],
     tags: ['Full‑Stack', 'Backend', 'Cloud'],
   },
 ];
@@ -179,5 +186,48 @@ export const EDUCATION = [
 
 export const CONTACT = {
   blurb:
-    "If you're hiring for backend / full‑stack or AI/ML roles, I'd love to chat. Email is best — I respond quickly.",
+    "If you're hiring for AI/ML, backend, or full-stack roles, I'd love to connect. Email works best — I reply quickly.",
 };
+
+export const ABOUT = {
+  paragraphs: [
+    "I'm an M.S. Computer Science student at the University at Buffalo with a background in electronics engineering from the University of Mumbai. I work across research-grade 3D human–object interaction, applied generative AI, and production full-stack systems.",
+    "I've been unifying diffusion-based HOI reconstruction pipelines in PyTorch, building multi-tenant RAG platforms, and shipping mobile experiences at scale—like a React Native app for 1K+ users with strong test coverage on AWS and MySQL.",
+    "Below is one portfolio: research, ML systems, mobile, cloud, and systems programming—everything in one place.",
+  ],
+};
+
+export type SkillCategory = { title: string; items: string[] };
+
+export const SKILL_CATEGORIES: SkillCategory[] = [
+  {
+    title: 'Languages',
+    items: ['Python', 'JavaScript', 'TypeScript', 'Java', 'C/C++', 'SQL'],
+  },
+  {
+    title: 'ML & AI',
+    items: [
+      'PyTorch',
+      'TensorFlow',
+      'RAG',
+      'Diffusion',
+      'Transformers',
+      'Hugging Face',
+      'Embeddings',
+      'Vector search',
+      'SHAP',
+    ],
+  },
+  {
+    title: 'Frontend & mobile',
+    items: ['React', 'React Native', 'Flutter', 'HTML/CSS', 'Tailwind'],
+  },
+  {
+    title: 'Backend & APIs',
+    items: ['FastAPI', 'Django', 'Django REST', 'Flask', 'Node.js', 'REST'],
+  },
+  {
+    title: 'Data & infra',
+    items: ['PostgreSQL', 'MySQL', 'MongoDB', 'AWS', 'Docker', 'Git', 'CI/CD', 'Kubernetes'],
+  },
+];

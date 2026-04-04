@@ -1,12 +1,12 @@
 import Link from 'next/link';
 import Container from '@/components/Container';
-import TrackToggle from '@/components/TrackToggle';
 import { SITE } from '@/lib/content';
 
 const NAV = [
   { href: '/', label: 'Home' },
   { href: '/#about', label: 'About' },
   { href: '/#skills', label: 'Skills' },
+  { href: '/#experience', label: 'Experience' },
   { href: '/projects', label: 'Projects' },
   { href: '/resume', label: 'Resume' },
   { href: '/#contact', label: 'Contact' },
@@ -14,7 +14,7 @@ const NAV = [
 
 export default function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-slate-800/70 bg-slate-950/80 backdrop-blur">
+    <header className="sticky top-0 z-50 border-b border-slate-800/70 bg-[#060912]/85 backdrop-blur-md">
       <Container>
         <div className="flex items-center justify-between gap-4 py-3">
           <div className="min-w-0">
@@ -29,7 +29,7 @@ export default function Navbar() {
               <Link
                 key={item.href}
                 href={item.href}
-                className="rounded-full px-3 py-2 text-sm text-slate-300 transition hover:bg-slate-900 hover:text-white"
+                className="rounded-full px-3 py-2 text-sm text-slate-300 transition hover:bg-slate-800/80 hover:text-amber-100"
               >
                 {item.label}
               </Link>
@@ -37,12 +37,11 @@ export default function Navbar() {
           </nav>
 
           <div className="flex items-center gap-2">
-            <TrackToggle className="hidden sm:inline-flex" />
             <a
               href={SITE.github}
               target="_blank"
               rel="noreferrer"
-              className="rounded-full border border-slate-700/70 bg-slate-900/80 px-3 py-2 text-sm text-slate-200 transition hover:border-cyan-400/60 hover:text-white"
+              className="rounded-full border border-slate-700/70 bg-slate-900/80 px-3 py-2 text-sm text-slate-200 transition hover:border-amber-400/50 hover:text-white"
             >
               GitHub
             </a>
@@ -54,12 +53,11 @@ export default function Navbar() {
             <Link
               key={item.href}
               href={item.href}
-              className="rounded-full border border-slate-700/70 bg-slate-900/80 px-3 py-2 text-xs text-slate-300 transition hover:border-cyan-400/60 hover:text-white"
+              className="rounded-full border border-slate-700/70 bg-slate-900/80 px-3 py-2 text-xs text-slate-300 transition hover:border-amber-400/50 hover:text-white"
             >
               {item.label}
             </Link>
           ))}
-          <TrackToggle className="w-full" />
         </div>
       </Container>
     </header>
