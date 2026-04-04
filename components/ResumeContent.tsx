@@ -53,7 +53,7 @@ export default function ResumeContent() {
             <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-slate-300">
               <li>1K+ users on live topic-based video chats (React Native + AWS + MySQL).</li>
               <li>85% unit test coverage (Jest + Pytest); ~30% fewer runtime bugs on core flows.</li>
-              <li>RAG platform with 10+ isolated agents; diffusion & HOI research pipelines in PyTorch.</li>
+              <li>RAG platform with 10+ isolated agents; diffusion and deep learning experiments in PyTorch.</li>
             </ul>
           </Reveal>
         </div>

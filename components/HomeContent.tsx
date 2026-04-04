@@ -173,21 +173,22 @@ export default function HomeContent() {
 
       <section id="about" className="scroll-mt-24 border-t border-slate-800/60 py-16 sm:py-20">
         <Container>
-          <Reveal>
-            <SectionHeading
-              title="About me"
-              kicker={<span className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-400/90">Story</span>}
-            />
-          </Reveal>
-          <div className="mt-10 grid gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-            <RevealStagger className="space-y-5 text-sm leading-relaxed text-slate-300 sm:text-base">
-              {ABOUT.paragraphs.map((p) => (
-                <RevealItem key={p}>
-                  <p>{p}</p>
-                </RevealItem>
-              ))}
-            </RevealStagger>
-            <Reveal delay={0.1} className="rounded-2xl border border-slate-800/80 bg-slate-900/50 p-6 backdrop-blur-sm">
+          <div className="flex flex-col gap-8 lg:gap-10">
+            <Reveal>
+              <SectionHeading
+                title="About me"
+                kicker={<span className="text-xs font-semibold uppercase tracking-[0.25em] text-amber-400/90">Story</span>}
+              />
+            </Reveal>
+            <div className="grid items-start gap-8 lg:grid-cols-[1.15fr_minmax(280px,0.85fr)] lg:gap-10 xl:gap-12">
+              <RevealStagger className="space-y-5 text-sm leading-relaxed text-slate-300 sm:text-base">
+                {ABOUT.paragraphs.map((p) => (
+                  <RevealItem key={p}>
+                    <p>{p}</p>
+                  </RevealItem>
+                ))}
+              </RevealStagger>
+              <Reveal className="w-full rounded-2xl border border-slate-800/80 bg-slate-900/50 p-6 shadow-sm backdrop-blur-sm lg:p-7">
               <div className="text-sm font-semibold text-slate-100">Education</div>
               <div className="mt-5 space-y-6">
                 {EDUCATION.map((ed) => (
@@ -219,7 +220,8 @@ export default function HomeContent() {
                   </a>
                 </div>
               </div>
-            </Reveal>
+              </Reveal>
+            </div>
           </div>
         </Container>
       </section>
@@ -236,7 +238,7 @@ export default function HomeContent() {
           </Reveal>
           <Reveal delay={0.06}>
             <p className="mt-4 max-w-2xl text-sm text-slate-400">
-              From research ML and GenAI to mobile apps, APIs, and cloud infrastructure—one stack, many surfaces.
+              From applied ML and GenAI to mobile apps, APIs, and cloud infrastructure—SDE plus AI in one stack.
             </p>
           </Reveal>
           <RevealStagger className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">

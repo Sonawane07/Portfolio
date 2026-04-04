@@ -4,7 +4,7 @@ export const SITE = {
   email: 'darshansonawane2012@gmail.com',
   github: 'https://github.com/Sonawane07',
   linkedin: 'https://linkedin.com/in/darshan2012/',
-  location: 'Buffalo, NY, USA',
+  location: 'Atlanta, GA',
   repoNote: 'Next.js · TypeScript · Tailwind',
 };
 
@@ -12,7 +12,7 @@ export const SITE = {
 export const HERO = {
   headline: 'AI / ML & Software Engineer',
   summary:
-    'I build research-grade ML systems—RAG platforms, diffusion models, and 3D human–object interaction—and ship production full-stack and mobile products with solid APIs, tests, and cloud deployment.',
+    'I focus on software engineering and AI: production APIs, mobile and web apps, and applied ML—RAG, diffusion, and scalable training and inference—with clear metrics and solid engineering practices.',
   skillChips: [
     'Python',
     'PyTorch',
@@ -44,13 +44,13 @@ export type Experience = {
 export const EXPERIENCE: Experience[] = [
   {
     company: 'University at Buffalo',
-    role: 'Research Assistant, 3D Human‑Object Interaction',
+    role: 'Graduate Research Assistant, ML & deep learning',
     location: 'Buffalo, NY',
     timeframe: 'Jan 2026 – Present',
     highlights: [
-      'Deconstructed 3D human‑object interaction into 3+ reusable primitives mapped to SMPL‑based human meshes with 10^4+ vertices.',
-      'Assessed diffusion‑based HOI reconstruction and contact‑aware optimization using short monocular videos (10–30 frames).',
-      'Unified three ICCV 2025 HOI methods into a single PyTorch pipeline with standardized mesh and point‑cloud processing.',
+      'Built a unified PyTorch experimentation pipeline by consolidating multiple research codebases with consistent preprocessing, training loops, and evaluation.',
+      'Worked on diffusion-based reconstruction and optimization from short video clips, emphasizing accuracy, robustness, and reproducible benchmarks.',
+      'Standardized mesh and point-cloud workflows so models and ablations could be compared fairly across experiments.',
     ],
   },
   {
@@ -191,9 +191,9 @@ export const CONTACT = {
 
 export const ABOUT = {
   paragraphs: [
-    "I'm an M.S. Computer Science student at the University at Buffalo with a background in electronics engineering from the University of Mumbai. I work across research-grade 3D human–object interaction, applied generative AI, and production full-stack systems.",
-    "I've been unifying diffusion-based HOI reconstruction pipelines in PyTorch, building multi-tenant RAG platforms, and shipping mobile experiences at scale—like a React Native app for 1K+ users with strong test coverage on AWS and MySQL.",
-    "Below is one portfolio: research, ML systems, mobile, cloud, and systems programming—everything in one place.",
+    "I'm an M.S. Computer Science student at the University at Buffalo with a background in electronics engineering from the University of Mumbai. My focus is software engineering plus AI: shipping reliable products while applying ML where it matters—GenAI, classical ML, and solid MLOps-style workflows.",
+    "I've built multi-tenant RAG platforms and diffusion experiments in PyTorch, and shipped mobile and full-stack software at scale—for example a React Native app for 1K+ users with strong test coverage on AWS and MySQL.",
+    "This portfolio is one narrative: SDE work across APIs, cloud, and mobile, alongside AI projects from RAG and generative models to data pipelines and systems programming.",
   ],
 };
 
