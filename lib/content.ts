@@ -92,71 +92,29 @@ export type Project = {
   id: string;
   title: string;
   timeframe: string;
+  /** e.g. Full Stack, ML, Data */
+  category: string;
   subtitle: string;
+  /** Paragraph shown when “View details” is expanded */
+  detailDescription: string;
   bullets: string[];
   tech: string[];
   links?: { label: string; href: string }[];
   tags: string[];
+  githubUrl?: string;
+  heroGradient?: string;
+  heroEmoji?: string;
 };
 
 export const PROJECTS: Project[] = [
   {
-    id: 'autorag',
-    title: 'AutoRAG Studio — RAG-as-a-Service Platform',
-    timeframe: '2025 – Present',
-    subtitle: 'Multi‑tenant RAG platform with isolated agent workflows and vector search.',
-    bullets: [
-      'Architected a multi‑tenant RAG platform supporting 10+ isolated AI agents with dedicated vector indexes, API keys, and knowledge bases.',
-      'Implemented end‑to‑end RAG pipelines with embeddings, vector similarity search, and LLM inference across three core stages.',
-      'Built a FastAPI orchestration layer and React dashboard to manage 5+ agent lifecycle operations (ingestion, querying, automation).',
-    ],
-    tech: ['Python', 'FastAPI', 'React', 'Vector DB', 'Embeddings', 'LLMs'],
-    tags: ['GenAI', 'RAG', 'Backend'],
-  },
-  {
-    id: 'text2image',
-    title: 'Text‑to‑Image Generation (Stable Diffusion + LoRA)',
-    timeframe: 'Jan 2025 – May 2025',
-    subtitle: 'Fine‑tuned Stable Diffusion v1.5 on CelebA with LoRA for faster training.',
-    bullets: [
-      'Designed a text‑conditioned diffusion model and fine‑tuned Stable Diffusion v1.5 with LoRA, cutting trainable params 22× and compute cost 75%.',
-      'Built an attribute‑conditioned synthesis pipeline achieving 85% accuracy with 4× faster convergence using PyTorch DDP across four GPUs.',
-      'Benchmarked against BART/T5 baselines and analyzed model behavior via MSE (0.047 vs. 0.165) for real‑time 512×512 generation.',
-    ],
-    tech: ['PyTorch', 'Diffusion Models', 'LoRA', 'DDP', 'CUDA', 'Transformers'],
-    tags: ['Generative AI', 'Diffusion', 'Training'],
-  },
-  {
-    id: 'crop-yield',
-    title: 'Crop Yield Prediction (ML + Explainability)',
-    timeframe: 'Sep 2024 – Nov 2024',
-    subtitle: 'Random Forest with engineered features; Flask + batch/real-time pipelines.',
-    bullets: [
-      'Developed a Random Forest model achieving 89% accuracy using 15+ engineered features in a 2-person Agile team.',
-      'Coordinated a Flask interface plus data pipelines for batch and real-time processing, including Spark/Hadoop for distributed workloads where required.',
-      'Presented results across review cycles for food security and agricultural insight stakeholders.',
-    ],
-    tech: ['Python', 'scikit-learn', 'SHAP', 'Flask', 'Pandas', 'Spark', 'Hadoop'],
-    tags: ['ML', 'Backend', 'Data'],
-  },
-  {
-    id: 'pintos',
-    title: 'Pintos Operating System',
-    timeframe: '2024',
-    subtitle: 'Kernel-level scheduling, synchronization, and system calls in C.',
-    bullets: [
-      'Engineered kernel-level thread scheduling, synchronization primitives, and system call interfaces across four Pintos modules.',
-      'Extended process management and memory handling, improving stability under concurrent workloads by roughly 30%.',
-      'Debugged low-level C kernel logic with GDB and validated behavior through 50+ targeted test scenarios.',
-    ],
-    tech: ['C', 'GDB', 'Kernel', 'Concurrency', 'OS'],
-    tags: ['Systems', 'Low-level'],
-  },
-  {
     id: 'incident-handoff',
-    title: 'Incident Handoff Platform — AI-Assisted On-Call Collaboration',
+    title: 'Incident Handoff Platform',
     timeframe: '2026',
-    subtitle: 'Full-stack incident management with async AI summaries and reliable webhook ingestion.',
+    category: 'Full Stack · AI',
+    subtitle: 'AI-assisted on-call collaboration with async summaries and reliable ingestion.',
+    detailDescription:
+      'Full-stack incident management platform using FastAPI, React, Supabase, and Redis. Centralizes alerts, timelines, and attachments across incident states for simulated on-call workflows. Includes Celery-based AI summarization with structured JSON outputs, RBAC, idempotent webhooks, and append-only audit logging for traceability.',
     bullets: [
       'Spearheaded a full-stack incident management platform using FastAPI, React, Supabase, and Redis, centralizing alerts, timelines, and attachments across five incident states for 100+ simulated workflows.',
       'Built an asynchronous AI summarization pipeline with Celery workers and structured JSON outputs, cutting responder handoff prep time by 42% with sub-25s p95 draft latency.',
@@ -164,12 +122,92 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['FastAPI', 'React', 'Supabase', 'Redis', 'Celery', 'Python'],
     tags: ['Full-Stack', 'AI', 'Backend'],
+    githubUrl: 'https://github.com/Sonawane07/Incident-handoff',
+    heroGradient: 'from-rose-600/35 via-slate-800/50 to-slate-950',
+    heroEmoji: '🛟',
+  },
+  {
+    id: 'football-analytics',
+    title: 'Football Analytics',
+    timeframe: '2025',
+    category: 'Data & ML',
+    subtitle: 'Match and team analytics with ML models and data-driven insights.',
+    detailDescription:
+      'End-to-end analytics project exploring football match data: feature engineering, predictive modeling, and visualizations to summarize team performance and trends. Built with Python data tooling and structured for reproducible experiments and clear reporting.',
+    bullets: [
+      'Engineered features from match statistics to support ranking and outcome-oriented analysis.',
+      'Trained and evaluated ML models for team and match-level predictions with clear metrics.',
+      'Packaged results into notebooks and visual summaries for quick interpretation.',
+    ],
+    tech: ['Python', 'Pandas', 'scikit-learn', 'NumPy', 'Matplotlib', 'Jupyter'],
+    tags: ['Sports', 'Analytics', 'ML'],
+    githubUrl: 'https://github.com/Sonawane07/Football-Analytics',
+    heroGradient: 'from-emerald-600/35 via-slate-800/40 to-slate-950',
+    heroEmoji: '⚽',
+  },
+  {
+    id: 'autorag',
+    title: 'AutoRAG Studio — Multi-Agent RAG Platform',
+    timeframe: '2025 – Present',
+    category: 'GenAI · Backend',
+    subtitle: 'Multi-tenant RAG platform with isolated agents and vector search.',
+    detailDescription:
+      'Architected a multi-tenant RAG platform supporting isolated AI agents with dedicated vector indexes, API keys, and knowledge bases. Implemented end-to-end pipelines with embeddings, retrieval, and LLM inference, plus a FastAPI orchestration layer and React dashboard for agent lifecycle operations.',
+    bullets: [
+      'Architected a multi‑tenant RAG platform supporting 10+ isolated AI agents with dedicated vector indexes, API keys, and knowledge bases.',
+      'Implemented end‑to‑end RAG pipelines with embeddings, vector similarity search, and LLM inference across three core stages.',
+      'Built a FastAPI orchestration layer and React dashboard to manage 5+ agent lifecycle operations (ingestion, querying, automation).',
+    ],
+    tech: ['Python', 'FastAPI', 'React', 'ChromaDB', 'Django', 'Ollama', 'LocalStack'],
+    tags: ['GenAI', 'RAG', 'Backend'],
+    heroGradient: 'from-violet-600/40 via-indigo-900/40 to-slate-950',
+    heroEmoji: '🤖',
+  },
+  {
+    id: 'portfolio-site',
+    title: 'Personal Portfolio Website',
+    timeframe: '2026',
+    category: 'Full Stack',
+    subtitle: 'This site — Next.js, animations, and hosted resume PDFs.',
+    detailDescription:
+      'Modern portfolio built with Next.js, TypeScript, and Tailwind. Showcases projects with expandable cards, live deployment on Vercel, and downloadable AI/ML and SDE resumes.',
+    bullets: [
+      'Responsive layout with motion-enhanced sections and project showcase.',
+      'Static generation for fast loads; resumes served from /public.',
+    ],
+    tech: ['Next.js', 'TypeScript', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
+    tags: ['Web', 'Portfolio'],
+    githubUrl: 'https://github.com/Sonawane07/Portfolio',
+    heroGradient: 'from-amber-500/35 via-slate-800/50 to-slate-950',
+    heroEmoji: '✨',
+  },
+  {
+    id: 'text2image',
+    title: 'Text‑to‑Image Generation (Stable Diffusion + LoRA)',
+    timeframe: 'Jan 2025 – May 2025',
+    category: 'Generative AI',
+    subtitle: 'Fine-tuned Stable Diffusion v1.5 on CelebA with LoRA for efficient training.',
+    detailDescription:
+      'Designed a text-conditioned diffusion setup and fine-tuned Stable Diffusion v1.5 with LoRA, cutting trainable parameters and compute cost. Built scalable training with PyTorch DDP across GPUs and benchmarked against transformer baselines for quality metrics.',
+    bullets: [
+      'Designed a text‑conditioned diffusion model and fine‑tuned Stable Diffusion v1.5 with LoRA, cutting trainable params 22× and compute cost 75%.',
+      'Built an attribute‑conditioned synthesis pipeline achieving 85% accuracy with 4× faster convergence using PyTorch DDP across four GPUs.',
+      'Benchmarked against BART/T5 baselines and analyzed model behavior via MSE (0.047 vs. 0.165) for real‑time 512×512 generation.',
+    ],
+    tech: ['PyTorch', 'Diffusion Models', 'LoRA', 'DDP', 'CUDA', 'Transformers'],
+    tags: ['Generative AI', 'Diffusion', 'Training'],
+    githubUrl: 'https://github.com/Sonawane07/Text-to-Image-Generation',
+    heroGradient: 'from-fuchsia-600/35 via-purple-900/40 to-slate-950',
+    heroEmoji: '🎨',
   },
   {
     id: 'ecommerce',
     title: 'E‑commerce Web App (Django + AWS)',
     timeframe: '2025',
-    subtitle: 'Full‑stack Django app with PayPal payments, auth flows, and AWS deployment.',
+    category: 'Full Stack · Cloud',
+    subtitle: 'Django REST app with payments, auth, and AWS deployment.',
+    detailDescription:
+      'Full-stack e-commerce platform with 30+ REST endpoints, PayPal integration, email verification, and session-based cart flows. Deployed on AWS with S3, RDS, and Elastic Beanstalk for production uptime and scalability.',
     bullets: [
       'Architected a full‑stack Django app with 30+ REST endpoints and coordinated end‑to‑end feature delivery.',
       'Integrated PayPal payments with 100% transaction validation, email verification, password reset, and session‑based cart persistence.',
@@ -177,6 +215,45 @@ export const PROJECTS: Project[] = [
     ],
     tech: ['Django', 'Python', 'PostgreSQL', 'AWS S3', 'AWS RDS', 'Elastic Beanstalk', 'PayPal'],
     tags: ['Full‑Stack', 'Backend', 'Cloud'],
+    heroGradient: 'from-cyan-600/30 via-slate-800/50 to-slate-950',
+    heroEmoji: '🛒',
+  },
+  {
+    id: 'crop-yield',
+    title: 'Crop Yield Prediction (ML + Explainability)',
+    timeframe: 'Sep 2024 – Nov 2024',
+    category: 'ML · Data',
+    subtitle: 'Random Forest with engineered features; Flask + batch/real-time pipelines.',
+    detailDescription:
+      'Developed a Random Forest model with engineered features for yield prediction, plus Flask-based interfaces and pipelines for batch and real-time processing. Extended with Spark/Hadoop where distributed processing was required.',
+    bullets: [
+      'Developed a Random Forest model achieving 89% accuracy using 15+ engineered features in a 2-person Agile team.',
+      'Coordinated a Flask interface plus data pipelines for batch and real-time processing, including Spark/Hadoop for distributed workloads where required.',
+      'Presented results across review cycles for food security and agricultural insight stakeholders.',
+    ],
+    tech: ['Python', 'scikit-learn', 'SHAP', 'Flask', 'Pandas', 'Spark', 'Hadoop'],
+    tags: ['ML', 'Backend', 'Data'],
+    githubUrl: 'https://github.com/Sonawane07/Crop-Yield-Prediction',
+    heroGradient: 'from-lime-600/25 via-slate-800/50 to-slate-950',
+    heroEmoji: '🌾',
+  },
+  {
+    id: 'pintos',
+    title: 'Pintos Operating System',
+    timeframe: '2024',
+    category: 'Systems',
+    subtitle: 'Kernel scheduling, synchronization, and syscalls in C.',
+    detailDescription:
+      'Course systems project implementing kernel-level thread scheduling, synchronization primitives, and system call interfaces across Pintos modules. Emphasized correctness under concurrency and validation with extensive tests.',
+    bullets: [
+      'Engineered kernel-level thread scheduling, synchronization primitives, and system call interfaces across four Pintos modules.',
+      'Extended process management and memory handling, improving stability under concurrent workloads by roughly 30%.',
+      'Debugged low-level C kernel logic with GDB and validated behavior through 50+ targeted test scenarios.',
+    ],
+    tech: ['C', 'GDB', 'Kernel', 'Concurrency', 'OS'],
+    tags: ['Systems', 'Low-level'],
+    heroGradient: 'from-zinc-600/40 via-slate-800/60 to-slate-950',
+    heroEmoji: '⚙️',
   },
 ];
 

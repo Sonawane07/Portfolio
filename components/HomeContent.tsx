@@ -319,10 +319,10 @@ export default function HomeContent() {
               </Link>
             </Reveal>
           </div>
-          <RevealStagger className="mt-10 grid gap-6">
-            {PROJECTS.map((p) => (
+          <RevealStagger className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+            {PROJECTS.map((p, i) => (
               <RevealItem key={p.id}>
-                <ProjectCard project={p} />
+                <ProjectCard project={p} index={i} />
               </RevealItem>
             ))}
           </RevealStagger>

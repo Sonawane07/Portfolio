@@ -48,10 +48,10 @@ export default function ProjectsContent() {
           </div>
         </Reveal>
 
-        <div key={tag} className="mt-8 grid gap-6">
-          {visible.map((p) => (
+        <div key={tag} className="mt-8 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
+          {visible.map((p, i) => (
             <Reveal key={`${tag}-${p.id}`}>
-              <ProjectCard project={p} />
+              <ProjectCard project={p} index={i} />
             </Reveal>
           ))}
           {!visible.length ? (
