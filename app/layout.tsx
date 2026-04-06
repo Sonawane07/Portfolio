@@ -21,11 +21,11 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   title: `${SITE.name} | Portfolio`,
   description:
-    "Portfolio of Darshan Sunil Sonawane — software engineer and AI/ML engineer based in Atlanta, GA.",
+    "Portfolio of Darshan Sunil Sonawane, software engineer and AI/ML engineer based in Atlanta, GA.",
   openGraph: {
     title: `${SITE.name} | Portfolio`,
     description:
-      "Software engineer and AI/ML engineer in Atlanta — full-stack, mobile, RAG, diffusion, and cloud.",
+      "Software engineer and AI/ML engineer in Atlanta: full stack, mobile, RAG, diffusion, and cloud.",
     type: "website",
   },
 };

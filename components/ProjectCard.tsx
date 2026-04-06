@@ -102,7 +102,7 @@ export default function ProjectCard({ project, index }: { project: Project; inde
                 View on GitHub
               </a>
             ) : (
-              <p className="text-center text-xs text-slate-500">Public repository link coming soon — reach out for access.</p>
+              <p className="text-center text-xs text-slate-500">Public repository link coming soon. Reach out for access.</p>
             )}
           </div>
         ) : null}

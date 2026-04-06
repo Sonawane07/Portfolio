@@ -238,7 +238,7 @@ export default function HomeContent() {
           </Reveal>
           <Reveal delay={0.06}>
             <p className="mt-4 max-w-2xl text-sm text-slate-400">
-              From applied ML and GenAI to mobile apps, APIs, and cloud infrastructure—SDE plus AI in one stack.
+              From applied ML and GenAI to mobile apps, APIs, and cloud infrastructure: SDE plus AI in one stack.
             </p>
           </Reveal>
           <RevealStagger className="mt-10 grid gap-6 sm:grid-cols-2 xl:grid-cols-3">
