@@ -153,6 +153,19 @@ export const PROJECTS: Project[] = [
     tags: ['Systems', 'Low-level'],
   },
   {
+    id: 'incident-handoff',
+    title: 'Incident Handoff Platform — AI-Assisted On-Call Collaboration',
+    timeframe: '2026',
+    subtitle: 'Full-stack incident management with async AI summaries and reliable webhook ingestion.',
+    bullets: [
+      'Spearheaded a full-stack incident management platform using FastAPI, React, Supabase, and Redis, centralizing alerts, timelines, and attachments across five incident states for 100+ simulated workflows.',
+      'Built an asynchronous AI summarization pipeline with Celery workers and structured JSON outputs, cutting responder handoff prep time by 42% with sub-25s p95 draft latency.',
+      'Implemented RBAC, idempotent webhook ingestion, and append-only audit logs for 1,000+ synthetic alert payloads, achieving 99.3% processing reliability.',
+    ],
+    tech: ['FastAPI', 'React', 'Supabase', 'Redis', 'Celery', 'Python'],
+    tags: ['Full-Stack', 'AI', 'Backend'],
+  },
+  {
     id: 'ecommerce',
     title: 'E‑commerce Web App (Django + AWS)',
     timeframe: '2025',

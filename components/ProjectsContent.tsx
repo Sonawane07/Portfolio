@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import Container from '@/components/Container';
 import SectionHeading from '@/components/SectionHeading';
 import ProjectCard from '@/components/ProjectCard';
-import { Reveal, RevealItem, RevealStagger } from '@/components/Reveal';
+import { Reveal } from '@/components/Reveal';
 import { PROJECTS } from '@/lib/content';
 
 export default function ProjectsContent() {
@@ -48,13 +48,18 @@ export default function ProjectsContent() {
           </div>
         </Reveal>
 
-        <RevealStagger className="mt-8 grid gap-6">
+        <div key={tag} className="mt-8 grid gap-6">
           {visible.map((p) => (
-            <RevealItem key={p.id}>
+            <Reveal key={`${tag}-${p.id}`}>
               <ProjectCard project={p} />
-            </RevealItem>
+            </Reveal>
           ))}
-        </RevealStagger>
+          {!visible.length ? (
+            <div className="rounded-2xl border border-slate-800/80 bg-slate-900/50 p-6 text-sm text-slate-300">
+              No projects found for this filter.
+            </div>
+          ) : null}
+        </div>
       </Container>
     </main>
   );
